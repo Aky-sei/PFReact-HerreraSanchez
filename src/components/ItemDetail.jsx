@@ -39,7 +39,7 @@ export const ItemDetail = () => {
 
     const handleAddToCart = () => {
         reset()
-        console.log("La compra se ha confirmado")
+        console.log("Objeto añadido al carrito")
     }
 
     return (

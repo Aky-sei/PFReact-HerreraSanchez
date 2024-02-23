@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 export const Item = ({product}) => {
 
     const handleAddToCart = () => {
-        console.log("a")
+        console.log("Objeto añadido al carrito")
     }
 
     return (
