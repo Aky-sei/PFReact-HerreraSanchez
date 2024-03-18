@@ -2,9 +2,11 @@ import { useState } from "react"
 
 
 export const useNumberCounter = (min = 0, max = 10, initial = 0, step = 1) => {
-    
-    if (initial < min || initial > max) {
+
+    if (initial < min) {
         initial = min
+    } else if (initial > max) {
+        initial = max
     }
 
     const [count, setCount] = useState(initial)

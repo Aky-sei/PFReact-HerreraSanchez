@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import { ItemList } from "./ItemList";
 import { useParams } from "react-router-dom"
+import { getProducts } from "../firebase/firebase.js"
 
 export const ItemListContainer = () => {
     const [products, setProducts] = useState([])
     const { cid } = useParams()
 
     useEffect(() => {
-        fetch("../data/productos.json")
-        .then(response => response.json())
+        getProducts()
         .then(prods => {
             if (cid) {
                 let temp = prods.filter(prod => prod.tags.includes(cid))
@@ -22,7 +22,7 @@ export const ItemListContainer = () => {
 
     return (
         <div className="m-3 grid grid-cols-5 gap-8">
-            <ItemList products={products}/>
+            <ItemList products={products} type={"Item"}/>
         </div>
     )
 }
